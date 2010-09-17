@@ -1,0 +1,4 @@
+.DS_Store
+*.swp
+/include/*_config.php
+include/dwoo/compiled/

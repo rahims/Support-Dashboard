@@ -1,0 +1,18 @@
+body {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 62.5%;
+	color: #111;
+	text-align: center;
+}
+
+#main {
+	width: 94em;
+	margin: auto;
+	text-align: left;
+	margin-top: 5em;
+}
+
+p {
+	font-size: 1.6em;
+	margin: 0 0 0.3em 0;
+}
