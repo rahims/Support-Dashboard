@@ -23,13 +23,15 @@
 			<table id="calls" cellspacing="0" summary="Support calls placed.">
 				<tr>
 					<th scope="col">Caller</th>
+					<th scope="col">Location</th>
 					<th scope="col">Time</th>
 					<th scope="col">Duration</th>
 				</tr>
 				{loop $calls}
 				<tr>
 					<td>{$from}</td>
-					<td>{date_format $start_time "%B %e, %Y at %l:%M %p"}</td>
+					<td>{if count_characters($location) > 0} {$location} {else} &#8211; {/if}</td>
+					<td>{$start_time}</td>
 					<td>{$duration} {if $duration == 1} minute {else} minutes {/if}</td>
 				</tr>
 				{/loop}

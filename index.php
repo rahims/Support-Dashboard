@@ -22,6 +22,7 @@
 		while ($row = $result->FetchRow())
 		{
 			$from = $row[DB::$calls_from];
+			$location = $row[DB::$calls_location];
 			$start_time = new DateTime($row[DB::$calls_start_time], $server_timezone);
 			$duration = ceil($row[DB::$calls_duration]/60);
 
@@ -30,7 +31,8 @@
 			$start_time->setTimezone($local_timezone);
 
 			$call['from'] = format_phone_number($from);
-			$call['start_time'] = $start_time->getTimestamp();
+			$call['location'] = $location;
+			$call['start_time'] = $start_time->format('F j, Y \a\t g:i A');
 			$call['duration'] = $duration;
 
 			$calls[] = $call;
