@@ -167,7 +167,7 @@ class dbObject {
 		
 	}
 	
-	function create() {
+	function create(&$xmls) {
 		return array();
 	}
 	
@@ -504,11 +504,12 @@ class dbTable extends dbObject {
 	* @return array Options
 	*/
 	function addTableOpt( $opt ) {
-		if( $this->currentPlatform ) {
-		$this->opts[] = $opt;
+		if(isset($this->currentPlatform)) {
+			$this->opts[$this->parent->db->databaseType] = $opt;
 		}
 		return $this->opts;
 	}
+
 	
 	/**
 	* Generates the SQL that will create the table in the database
@@ -1404,10 +1405,11 @@ class adoSchema {
 	*
 	* @param object $db ADOdb database connection object.
 	*/
-	function adoSchema( &$db ) {
+	function adoSchema( $db ) {
 		// Initialize the environment
 		$this->mgq = get_magic_quotes_runtime();
-		set_magic_quotes_runtime(0);
+		#set_magic_quotes_runtime(0);
+		ini_set("magic_quotes_runtime", 0);
 		
 		$this->db = $db;
 		$this->debug = $this->db->debug;
@@ -1497,7 +1499,7 @@ class adoSchema {
 					$mode = XMLS_MODE_INSERT;
 					break;
 				default:
-					$mode = XMLS_EXISITNG_DATA;
+					$mode = XMLS_EXISTING_DATA;
 					break;
 			}
 			$this->existingData = $mode;
@@ -2373,7 +2375,8 @@ class adoSchema {
 	* @deprecated adoSchema now cleans up automatically.
 	*/
 	function Destroy() {
-		set_magic_quotes_runtime( $this->mgq );
+		ini_set("magic_quotes_runtime", $this->mgq );
+		#set_magic_quotes_runtime( $this->mgq );
 		unset( $this );
 	}
 }
