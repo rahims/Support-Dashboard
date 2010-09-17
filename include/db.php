@@ -5,7 +5,7 @@
 
 	class DB
 	{
-		public static $table = 'calls';
+		public static $calls = 'calls';
 
 		public static $calls_id = 'calls_id';
 		public static $calls_from = 'calls_from';
