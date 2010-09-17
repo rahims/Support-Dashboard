@@ -9,6 +9,17 @@ body {
 	text-align: center;
 }
 
+.error {
+	width: 46.5em;
+	margin: auto;
+	margin-top: 1.9em;
+	font-size: 1.6em;
+	padding: 1em;
+	background-color: #fef1ec;
+	color: #cd0a0a;
+	border: 1px solid #cd0a0a;
+}
+
 #main {
 	width: 94em;
 	border: 1px solid #efefef;

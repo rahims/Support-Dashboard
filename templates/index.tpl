@@ -8,6 +8,9 @@
 		<link rel="stylesheet" type="text/css" href="./templates/css/style.css" media="screen">
 	</head>
 	<body>
+		{if isset($error)}
+			<p class="error">{$error}</p>
+		{/if}
 		<div id="main">
 			<div id="info_bar">
 				<h1>Support Calls</h1>

@@ -38,7 +38,7 @@
 	}
 	catch (ADODB_Exception $e)
 	{
-		$error = '<p class="error">An error occurred while connecting to the database. Please try again later.</p>';
+		$error = 'An error occurred while connecting to the database. Please try again later.';
 	}
 	
 	$data->assign('total_call_count', $total_call_count);
