@@ -14,9 +14,9 @@ Installation
 
 Installation of Support Dashboard is similar to many other PHP/MySQL apps you
 may have used in the past. It consists of creating the MySQL database and table
-(steps 1 and 2), copying the folder to your server (steps 3 and 4), editing the
-configurations files with values for your setup (steps 5, 6, and 7), and, 
-lastly, pointing Twilio to the correct handler (step 8).
+(steps 1 and 2), copying the folder to your server (steps 3, 4, and 5), editing
+the configuration files with values for your setup (steps 6, 7, and 8), and, 
+lastly, pointing Twilio to the correct handler (step 9).
 
 1. Make a MySQL database for Support Dashboard (optionally, you can just add
    the table to an existing database).
@@ -25,19 +25,24 @@ lastly, pointing Twilio to the correct handler (step 8).
 
 3. Copy the support_dashboard folder to your server.
 
-4. Make the following writeable
+4. Create the following folders (if they don't already exist):
+
+	- /include/dwoo/compiled
+	- /include/dwoo/cache 
+
+5. Make the following writeable:
 
 	- /error_log.txt
 	- /include/dwoo/compiled
 	- /include/dwoo/cache
 
-5. Edit /include/config.php
+6. Edit /include/config.php
 
-6. Edit /include/db_config.php
+7. Edit /include/db_config.php
 
-7. Edit /include/twilio_config.php
+8. Edit /include/twilio_config.php
 
-8. Go to http://www.twilio.com and point the Voice URL to
+9. Go to http://www.twilio.com and point the Voice URL to
    http://[your server]/[path to Support Dashboard]/handle_incoming_call.php
    (leave the default POST method selected).
 
