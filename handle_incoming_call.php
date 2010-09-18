@@ -53,7 +53,15 @@
 
 			$call_id = $db->Insert_ID();
 
-			echo '<Dial action="'.$base_url.'handle_call_status.php?call_id='.$call_id.'" method="GET">'.FORWARD_TO_NUMBER.'</Dial>';
+			if (SHOW_CALLER)
+			{
+				$caller_id = $from;
+			}
+			else {
+				$caller_id = SUPPORT_NUMBER;
+			}
+
+			echo '<Dial action="'.$base_url.'handle_call_status.php?call_id='.$call_id.'" callerId="'.$caller_id.'" method="GET">'.FORWARD_TO_NUMBER.'</Dial>';
 		}
 	}
 	catch (ADODB_Exception $e)
