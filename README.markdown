@@ -1,13 +1,13 @@
-Support Dashboard Version 1.0.0
-===============================
+Support Dashboard
+=================
 
 Support Dashboard makes it easy for small businesses to track and view their
 incoming support calls.
 
 Support Dashboard works with the Twilio API, so you'll need an account and
 phone number at Twilio before you can get started. Twilio sells simple, pay as
-you go pricing, and you can sign up for a free account with $30 of free credits
-at http://www.twilio.com.
+you go phone services, and you can sign up for a free account with $30 of free
+credits at http://www.twilio.com.
 
 Installation
 ============
@@ -18,8 +18,7 @@ may have used in the past. It consists of creating the MySQL database and table
 the configuration files with values for your setup (steps 6, 7, and 8), and, 
 lastly, pointing Twilio to the correct handler (step 9).
 
-1. Make a MySQL database for Support Dashboard (optionally, you can just add
-   the table to an existing database).
+1. Make a MySQL database for Support Dashboard. 
 
 2. Create the MySQL table by importing support_dashboard.sql.
 
