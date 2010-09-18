@@ -14,7 +14,7 @@
 	{
 		$db = DB::conn();
 
-		$result = $db->Execute('SELECT * FROM '.DB::$calls);
+		$result = $db->Execute('SELECT * FROM '.DB::$calls.' ORDER BY '.DB::$calls_start_time.' DESC');
 
 		$total_call_duration = 0;
 		$total_call_count = $result->RecordCount();
