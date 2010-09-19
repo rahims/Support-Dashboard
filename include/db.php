@@ -8,7 +8,8 @@
 		public static $calls = 'calls';
 
 		public static $calls_id = 'calls_id';
-		public static $calls_twilio_sid = 'calls_twilio_sid';
+		public static $calls_incoming_twilio_sid = 'calls_incoming_twilio_sid';
+		public static $calls_outgoing_twilio_sid = 'calls_outgoing_twilio_sid';
 		public static $calls_from = 'calls_from';
 		public static $calls_location = 'calls_location';
 		public static $calls_start_time = 'calls_start_time';

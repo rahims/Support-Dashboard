@@ -47,7 +47,7 @@
 
 		if (validate_phone_number($from) && isset($call_sid))
 		{
-			$query = 'INSERT INTO '.DB::$calls.' ('.DB::$calls_twilio_sid.', '.DB::$calls_from.', '.DB::$calls_location.') VALUES ('.DB::clean($call_sid, $db).', '.DB::clean($from, $db).', '.DB::clean($call_location, $db).')';
+			$query = 'INSERT INTO '.DB::$calls.' ('.DB::$calls_incoming_twilio_sid.', '.DB::$calls_from.', '.DB::$calls_location.') VALUES ('.DB::clean($call_sid, $db).', '.DB::clean($from, $db).', '.DB::clean($call_location, $db).')';
 			
 			$db->Execute($query);
 
