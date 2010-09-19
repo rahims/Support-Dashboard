@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 17, 2010 at 04:35 PM
+-- Generation Time: Sep 18, 2010 at 06:40 PM
 -- Server version: 5.1.44
 -- PHP Version: 5.3.2
 
@@ -27,7 +27,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 CREATE TABLE `calls` (
   `calls_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
-  `calls_twilio_sid` varchar(34) NOT NULL,
+  `calls_incoming_twilio_sid` varchar(34) NOT NULL,
+  `calls_outgoing_twilio_sid` varchar(34) NOT NULL,
   `calls_from` varchar(10) CHARACTER SET ascii NOT NULL,
   `calls_location` varchar(255) NOT NULL,
   `calls_start_time` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
