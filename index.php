@@ -19,6 +19,11 @@
 		$total_call_duration = 0;
 		$total_call_count = $result->RecordCount();
 
+		// This data is used by the JS charting library to display a dot chart
+		// showing the calls received each hour. Each slot in the array
+		// corresponds to an hour in the day.
+		$call_volume_chart_data = array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+
 		while ($row = $result->FetchRow())
 		{
 			$from = $row[DB::$calls_from];
@@ -27,6 +32,7 @@
 			$duration = ceil($row[DB::$calls_duration]/60);
 
 			$total_call_duration += $duration;
+			$call_volume_chart_data[$start_time->format('G')] += 1;
 
 			$start_time->setTimezone($local_timezone);
 
@@ -46,6 +52,7 @@
 	$data->assign('total_call_count', $total_call_count);
 	$data->assign('total_call_duration', $total_call_duration);
 	$data->assign('total_spent', money_format('%i', $total_call_duration * CALL_COST));
+	$data->assign('call_volume_chart_data', implode(', ', $call_volume_chart_data));
 	$data->assign('calls', $calls);
 	$data->assign('error', $error);
 
